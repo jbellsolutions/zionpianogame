@@ -7,8 +7,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the game page
-    router.push('/game');
+    // Redirect to the homebase page
+    router.push('/homebase');
   }, [router]);
 
   return (

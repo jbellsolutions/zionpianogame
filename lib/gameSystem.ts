@@ -16,7 +16,7 @@ export interface Mission {
   unlocked: boolean;
 }
 
-export interface GameWorld {
+export interface GameWorldData {
   id: GameWorld;
   name: string;
   description: string;
@@ -50,7 +50,7 @@ export interface Badge {
 }
 
 // Game worlds configuration
-export const GAME_WORLDS: Record<GameWorld, Omit<GameWorld, 'missions'>> = {
+export const GAME_WORLDS: Record<GameWorld, Omit<GameWorldData, 'missions'>> = {
   village: {
     id: 'village',
     name: 'Minecraft Village',

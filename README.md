@@ -16,6 +16,47 @@ An interactive, Minecraft-themed AI tutor application designed to help Zion mast
 - **🎨 Minecraft Theme**: Pixelated graphics and familiar characters
 - **📱 Tablet Optimized**: Perfect for Amazon Kindle Fire and other tablets
 - **💬 Two-Way Conversation**: Natural dialogue with the AI tutor
+- **🏠 AI Homebase**: Personal command center with voice agent, topics tracking, and goal management
+
+## 🎯 Zion's AI Homebase
+
+The homebase is Zion's personal learning command center featuring:
+
+- **🎤 Vapi Voice Agent**: Click-to-call voice assistant (like 11Labs) for natural conversations about any topic
+- **📖 Learning Topics**: Quick access to current focus areas:
+  - Tutoring
+  - Piano
+  - Judo
+  - Soccer
+  - Minecraft
+- **✅ Goals System**: Track daily and weekly learning goals with checkboxes
+- **📊 Progress Dashboard**: Visual progress tracking and completion statistics
+- **🔗 N8N Integration**: Goals automatically sync to workflow automation
+
+### Setting Up the Homebase
+
+1. **Get Vapi API Keys**:
+   - Sign up at [vapi.ai](https://vapi.ai)
+   - Create a new assistant for Zion
+   - Copy your Public Key and Assistant ID
+
+2. **Set up N8N Webhook (Optional)**:
+   - Create an N8N workflow with a webhook trigger
+   - Copy the webhook URL
+   - This will receive goal updates automatically
+
+3. **Configure Environment Variables**:
+```bash
+# Add these to your .env file
+NEXT_PUBLIC_VAPI_PUBLIC_KEY=your_vapi_public_key
+NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_assistant_id
+NEXT_PUBLIC_N8N_WEBHOOK_URL=your_webhook_url
+```
+
+4. **Access the Homebase**:
+   - Navigate to `/homebase` or it will be the default landing page
+   - Click the voice button to start talking with the AI tutor
+   - Add goals and track progress throughout the day!
 
 ## 🚀 Quick Start
 
@@ -178,6 +219,9 @@ The AI automatically adapts, but you can modify prompts in `lib/gemini.ts`.
 |----------|-------------|----------|
 | `NEXT_PUBLIC_GEMINI_API_KEY` | Google Gemini API key | Yes |
 | `NEXT_PUBLIC_ELEVENLABS_API_KEY` | 11Labs API for better voice (optional) | No |
+| `NEXT_PUBLIC_VAPI_PUBLIC_KEY` | Vapi public API key for voice agent | Yes (for Homebase) |
+| `NEXT_PUBLIC_VAPI_ASSISTANT_ID` | Vapi assistant ID | Yes (for Homebase) |
+| `NEXT_PUBLIC_N8N_WEBHOOK_URL` | N8N webhook URL for goal tracking | No |
 
 ## 🛠️ Tech Stack
 

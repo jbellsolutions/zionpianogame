@@ -210,7 +210,11 @@ export class VoiceServiceImproved {
       };
 
       try {
-        this.synthesis.speak(utterance);
+        if (this.synthesis) {
+          this.synthesis.speak(utterance);
+        } else {
+          throw new Error('Speech synthesis not available');
+        }
       } catch (error: any) {
         console.error('Error initiating speech:', error);
         this.isTalking = false;
